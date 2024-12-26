@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000 url('../images/a95fbf5fd7e085056e801f5d15a903b8.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro com opacidade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px); /* Aplica o efeito de desfoque no fundo */
+    z-index: 1000; /* Faz com que fique sobre o conteúdo */
+}
+
+.start-btn {
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: transparent; /* Fundo totalmente transparente */
+    border: 2px solid transparent; /* Remover borda */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Adiciona sombra para destaque */
+}
+
+.start-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Fundo semitransparente quando passar o mouse */
+    border-color: #fff; /* Borda branca ao passar o mouse */
+    transform: scale(1.1); /* Efeito de aumento no hover */
+}
+
+.start-btn:active {
+    background-color: rgba(255, 255, 255, 0.4); /* Fundo mais opaco ao clicar */
+    transform: scale(1);
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borda semitransparente */
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Fundo translúcido */
+    backdrop-filter: blur(8px); /* Efeito de vidro fosco */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), /* Luz suave */
+                0 0 60px rgba(255, 255, 255, 0.2); 
+    animation: glowEffect 2s infinite alternate; /* Animação de brilho */
+    display: none; /* Começa oculto */
+}
+
+/* Animação de brilho */
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2),
+                    0 0 30px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5),
+                    0 0 60px rgba(255, 255, 255, 0.3);
+    }
+}
+
+
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    animation: glow 2s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+    animation: slideIn 1.5s ease-out;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+    border: 5px solid transparent;
+    border-top: 5px solid #6e44ff;
+    border-right: 5px solid #f9a8ff;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite, gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        border-top-color: #ffffff;
+        border-right-color: #ffffff;
+    }   
+    50% {
+        border-top-color: #ffffff;
+        border-right-color: #ffffff;
+    }
+    100% {
+        border-top-color: #ffffff;
+        border-right-color: #ffffff;
+    }
+}
+
+
+.message {
+    font-size: 1.1rem;
+    color: #aaa;
+    animation: fadeInMessage 3s infinite alternate;
+}
+
+.discord-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    margin-top: 2rem;
+    background: #707070;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.discord-btn:hover {
+    background: #060b29;
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.discord-btn:active {
+    background: #5a6a9f;
+    transform: scale(1);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glow {
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 40px #fff;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInMessage {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+
